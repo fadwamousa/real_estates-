@@ -32,6 +32,7 @@ body a {
 	color: #444;
 	letter-spacing: -1px;
 	padding: 5px;
+	float: right;
 }
 .navbar-brand:hover {
 	color: #2ABB9B;

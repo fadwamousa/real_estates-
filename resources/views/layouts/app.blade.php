@@ -27,29 +27,29 @@
 
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="direction: rtl">
 
         <div class="header">
             <div class="container">
                 <a class="navbar-brand" href="{{url('/')}}">
                     <i class="fa fa-paper-plane"></i> ONE
                 </a>
-                <div class="menu">
+                <div class="menu pull-left">
                     <a class="toggleMenu" href="#">
-                        <img src="images/nav_icon.png" alt="" />
+                        <img src="{{asset('images/nav_icon.png')}}" alt="" />
                     </a>
                     <ul class="nav" id="nav">
-                        <li class="current"><a href="{{url('/home')}}">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li class="current"><a href="{{url('/home')}}">الرئيسية</a></li>
+                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="services.html">خدمتنا</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('تسجيل الدخول') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('تسجيل عضوية جديدة') }}</a>
                                 </li>
                             @endif
                         @else
@@ -62,7 +62,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('تسجيل الخروج') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
