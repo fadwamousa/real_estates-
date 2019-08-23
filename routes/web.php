@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'admin'],function(){
+Route::group(['prefix' => 'admin','middleware' => 'admin'],function(){
 
-    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/', 'AdminController@index')->name('admin');
+    Route::get('/users', 'UsersController@index')->name('admin.users');
+
 
 });
 
