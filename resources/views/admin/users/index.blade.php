@@ -13,14 +13,24 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+
+        @if(session()->has('message'))
+            <div class="alert alert-dark">
+                {{session()->get('message')}}
+                {{session()->forget('message')}}
+            </div>
+
+        @endif
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Data Tables
+                Users Show
                 <small>advanced tables</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="{{route('admin')}}">
+                        <i class="fa fa-dashboard"></i> Home</a>
+                </li>
                 <li><a href="#">Tables</a></li>
                 <li class="active">Data tables</li>
             </ol>
@@ -495,11 +505,11 @@
 
             $('#example2').DataTable({
                 'paging'      : true,
-                'lengthChange': false,
-                'searching'   : false,
+                'lengthChange': true,
+                'searching'   : true,
                 'ordering'    : true,
                 'info'        : true,
-                'autoWidth'   : false
+                'autoWidth'   : true
             })
         })
     </script>
